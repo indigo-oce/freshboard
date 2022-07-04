@@ -17,7 +17,7 @@ BUG: bug fix #UNUSED
 DEP: deprecate something, or remove a deprecated object #UNUSED
 DEV: development tool or utility #UNUSED
 DOC: documentation
-ENH: enhancement #UNUSED
+ENH: enhancement
 MAINT: maintenance commit (refactoring, typos, etc.) #UNUSED
 REV: revert an earlier commit #UNUSED
 STY: style fix (whitespace, PEP8) #UNUSED
