@@ -18,7 +18,7 @@ DEP: deprecate something, or remove a deprecated object #UNUSED
 DEV: development tool or utility #UNUSED
 DOC: documentation
 ENH: enhancement
-MAINT: maintenance commit (refactoring, typos, etc.) #UNUSED
+MAINT: maintenance commit (refactoring, typos, etc.)
 REV: revert an earlier commit #UNUSED
 STY: style fix (whitespace, PEP8) #UNUSED
 TST: addition or modification of tests

@@ -18,14 +18,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/projects', function () {
-    return view('projects.index', ['projects' => Project::all()]);
-});
+Route::get('/projects', 'App\Http\Controllers\ProjectsController@index');
+Route::post('/projects', 'App\Http\Controllers\ProjectsController@store');
 
-Route::post('/projects', function () {
-    // validate
-    // persist
-    Project::create(request(['title', 'description']));
-    // redirect
-    return view('/projects.index', ['projects' => Project::all()]);
-});
