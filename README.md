@@ -3,11 +3,15 @@
 This is for the [Build A Laravel App With TDD](https://laracasts.com/series/build-a-laravel-app-with-tdd) project, which I did a few years ago (2020).  I'm doing it again, using it as an opportunity to learn more about git (merging from other repos), and I will be using the testing skills to make tests for the [Laravel 8 From Scratch](https://laracasts.com/series/laravel-8-from-scratch) course.
 
 ## Git Commit Style
-I will commit changes based on their features, then do an empty commit for each episode (or update change log).  This allows clear distinctions for what episode changes are from, and allows reverting changes because sometimes multiple techniques for something are shown.
+I will commit changes based on their features, then do an empty commit for each episode.  This allows clear distinctions for what episode changes are from, and allows reverting changes because sometimes multiple techniques for something are shown.
 
-If I deviate from an episode in any significant way, the commit will have a `*` at the beginning, or `_` do something that only makes sense because of my own changes/repo (except for DOC: commits it's assumed), and probably the reason in the commit message.
+**Commit Keycodes:** For some commits, the commit message will start with:  *(and probably an explanation in the commit message body.)*
 
-Using commit prefixes based on the [NumPy dev workflow commit messages](https://numpy.org/doc/1.14/dev/gitwash/development_workflow.html#writing-the-commit-message):
+- `*` if I deviate from an episode in any significant way
+- `_` for something that only makes sense because of my own changes/repo (except for DOC: commits it's assumed)
+- `!` if there was an issue related to the laravel/php version difference
+
+Using **commit prefixes** based on the [NumPy dev workflow commit messages](https://numpy.org/doc/1.14/dev/gitwash/development_workflow.html#writing-the-commit-message):
 (I will remove **#UNUSED** when they are used.)
 ```
 API: an (incompatible) API change #UNUSED
