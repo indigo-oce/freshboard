@@ -21,7 +21,7 @@ ENH: enhancement #UNUSED
 MAINT: maintenance commit (refactoring, typos, etc.) #UNUSED
 REV: revert an earlier commit #UNUSED
 STY: style fix (whitespace, PEP8) #UNUSED
-TST: addition or modification of tests #UNUSED
+TST: addition or modification of tests
 REL: related to releasing numpy #UNUSED
 ```
 
@@ -35,9 +35,13 @@ On arch linux, using:
 - `php` 8.1.7 (latest atm)
 - `composer` 2.3.7 (latest atm)
 - `mysql` 10.8.3 via `mariadb` (latest atm)
+- `sqlite` 3.38.5 (latest atm)
 
 PHP extensions (for mysql), in /etc/php/php.ini, uncomment the lines:
 ```
 extension=mysqli
 extension=pdo_mysql
+extension=pdo_sqlite
+extension=sqlite3
 ```
+Then install `php-sqlite`.
