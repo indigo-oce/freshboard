@@ -17,7 +17,7 @@ Using **commit prefixes** based on the [NumPy dev workflow commit messages](http
 API: an (incompatible) API change #UNUSED
 BENCH: changes to the benchmark suite #UNUSED
 BLD: change related to building numpy
-BUG: bug fix #UNUSED
+BUG: bug fix
 DEP: deprecate something, or remove a deprecated object #UNUSED
 DEV: development tool or utility #UNUSED
 DOC: documentation
