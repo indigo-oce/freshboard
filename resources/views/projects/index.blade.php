@@ -4,7 +4,7 @@
 
 @foreach ($projects as $project)
 <article>
-    <h1> {{ $project->title }} </h1>
+    <h1> <a href="{{ $project->path() }}">{{ $project->title }}</a> </h1>
     <p> {{ $project->description }} </p>
 
 </article>
