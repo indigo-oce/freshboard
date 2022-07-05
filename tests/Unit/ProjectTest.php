@@ -2,8 +2,8 @@
 
 namespace Tests\Unit;
 
+use Tests\TestCase;
 use App\Models\Project;
-use PHPUnit\Framework\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ProjectTest extends TestCase
