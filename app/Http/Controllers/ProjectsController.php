@@ -10,11 +10,16 @@ class ProjectsController extends Controller
     public function index()
     {
         return view('projects.index', ['projects' => Project::all()]);
+        // return view('projects.index', ['projects' => auth()->user()->projects ]);
     }
 
-    public function show()
+    public function show(Project $project)
     {
-        return view('projects.show', ['project' => Project::findOrFail(request('project'))]);
+        if (auth()->id() != $project->owner_id) {
+            abort(403);
+        }
+
+        return view('projects.show', ['project' => $project]);
     }
 
     public function store()
