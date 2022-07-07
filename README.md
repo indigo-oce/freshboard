@@ -9,7 +9,8 @@ I will commit changes based on their features, then do an empty commit for each 
 
 - `*` if I deviate from an episode in any significant way
 - `_` for something that only makes sense because of my own changes/repo (except for DOC: commits it's assumed)
-- `!` if there was an issue related to the laravel/php version difference
+- `^` if there was an issue related to the laravel/php version difference
+- `!` if the tests failed *(only started half way through Ep5)*
 
 Using **commit prefixes** based on the [NumPy dev workflow commit messages](https://numpy.org/doc/1.14/dev/gitwash/development_workflow.html#writing-the-commit-message):
 (I will remove **#UNUSED** when they are used.)
