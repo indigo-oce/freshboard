@@ -19,6 +19,11 @@ class ProjectsTest extends TestCase
         $this->post('/projects', $attributes)->assertRedirect('login');
     }
 
+    public function test_only_authenticated_users_can_view_projects()
+    {
+        $this->get('/projects')->assertRedirect('login');
+    }
+
     public function test_a_user_can_create_a_project()
     {
         $this->withoutExceptionHandling();
