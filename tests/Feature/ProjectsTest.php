@@ -11,6 +11,14 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class ProjectsTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
+
+    public function test_only_authenticated_users_can_create_projects()
+    {
+        $attributes = Project::factory()->raw(['owner_id' => null]);
+
+        $this->post('/projects', $attributes)->assertRedirect('login');
+    }
+
     public function test_a_user_can_create_a_project()
     {
         $this->withoutExceptionHandling();
@@ -58,12 +66,5 @@ class ProjectsTest extends TestCase
         $attributes = Project::factory()->raw(['description' => '']);
 
         $this->post('/projects', $attributes)->assertSessionHasErrors('description');
-    }
-
-    public function test_a_project_requires_an_owner()
-    {
-        $attributes = Project::factory()->raw(['owner_id' => null]);
-
-        $this->post('/projects', $attributes)->assertRedirect('login');
     }
 }
