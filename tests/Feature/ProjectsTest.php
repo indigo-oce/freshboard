@@ -24,6 +24,13 @@ class ProjectsTest extends TestCase
         $this->get('/projects')->assertRedirect('login');
     }
 
+    public function test_guests_cannot_view_a_single_project()
+    {
+        $project = Project::factory()->create();
+
+        $this->get($project->path())->assertRedirect('login');
+    }
+
     public function test_a_user_can_create_a_project()
     {
         $this->withoutExceptionHandling();
