@@ -12,14 +12,14 @@ class ProjectsTest extends TestCase
 {
     use WithFaker, RefreshDatabase;
 
-    public function test_only_authenticated_users_can_create_projects()
+    public function test_guests_cannot_create_projects()
     {
         $attributes = Project::factory()->raw(['owner_id' => null]);
 
         $this->post('/projects', $attributes)->assertRedirect('login');
     }
 
-    public function test_only_authenticated_users_can_view_projects()
+    public function test_guests_cannot_view_projects()
     {
         $this->get('/projects')->assertRedirect('login');
     }
