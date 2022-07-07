@@ -23,7 +23,7 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-Route::get('/projects', 'App\Http\Controllers\ProjectsController@index');
+Route::get('/projects', 'App\Http\Controllers\ProjectsController@index')->middleware('auth');
 Route::get('/projects/{project}', 'App\Http\Controllers\ProjectsController@show');
 
 Route::post('/projects', 'App\Http\Controllers\ProjectsController@store')->middleware('auth');
