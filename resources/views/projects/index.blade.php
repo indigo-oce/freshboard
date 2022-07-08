@@ -18,7 +18,7 @@
                 @forelse ($projects as $project)
                 <div class="bg-white m-4 p-3 h-64 rounded shadow">
                     <x-nav-link href="{{ $project->path() }}">
-                        <h1 class="font-semibold text-xl text-gray-800 leading-tight">
+                        <h1 class="py-2 -ml-4 border-l-4 border-x-indigo-600 pl-4 font-semibold text-xl text-gray-800 leading-tight">
                             {{ $project->title }}
                         </h1>
                     </x-nav-link>
