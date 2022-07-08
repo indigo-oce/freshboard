@@ -63,11 +63,20 @@ class ManageProjectsTest extends TestCase
 
         $this->actingAs(User::factory()->create());
 
-        $project = Project::factory()->create([
-            'owner_id' => User::factory()->create()->id
-        ]);
+        $project = Project::factory()->create();
 
         $this->get($project->path())->assertStatus(403);
+    }
+
+    public function test_a_user_cannot_view_the_projects_of_others_on_projects_view()
+    {
+        $this->actingAs(User::factory()->create());
+
+        $project = Project::factory()->create();
+
+        $this->get('/projects')
+            ->assertDontSee($project->title)
+            ->assertDontSee($project->description);
     }
 
     public function test_a_project_requires_a_title()
