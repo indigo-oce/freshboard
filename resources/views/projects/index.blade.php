@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <h1>Birdboard</h1>
+<a href="/projects/create">Create Project</a>
 
 @forelse ($projects as $project)
 <article>
