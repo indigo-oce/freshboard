@@ -9,8 +9,7 @@ class ProjectsController extends Controller
 {
     public function index()
     {
-        return view('projects.index', ['projects' => Project::all()]);
-        // return view('projects.index', ['projects' => auth()->user()->projects ]);
+        return view('projects.index', ['projects' => auth()->user()->projects ]);
     }
 
     public function show(Project $project)
