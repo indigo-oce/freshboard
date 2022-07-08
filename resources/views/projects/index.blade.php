@@ -14,16 +14,22 @@
 
     <div class="py-4">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            @forelse ($projects as $project)
-            <x-nav-link href="{{ $project->path() }}">
-                <h1 class="font-semibold text-xl text-gray-800 leading-tight">
-                    {{ $project->title }}
-                </h1>
-            </x-nav-link>
-            <p> {{ $project->description }} </p>
-            @empty
-            <p>No Projects Yet...</p>
-            @endforelse
+            <div class="grid grid-cols-3">
+                @forelse ($projects as $project)
+                <div class="bg-white m-4 p-3 h-64 rounded shadow">
+                    <x-nav-link href="{{ $project->path() }}">
+                        <h1 class="font-semibold text-xl text-gray-800 leading-tight">
+                            {{ $project->title }}
+                        </h1>
+                    </x-nav-link>
+                    <p> {{ mb_strimwidth($project->description, 0, 250) }} </p>
+                </div>
+                @empty
+                <div>
+                    <p>No Projects Yet...</p>
+                </div>
+                @endforelse
+            </div>
         </div>
     </div>
 </x-app-layout>
