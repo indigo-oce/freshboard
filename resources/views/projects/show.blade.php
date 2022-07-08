@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
-<h1>Birdboard</h1>
-<a href="/projects">Go Back</a>
 
-<article>
-    <h1> {{ $project->title }} </h1>
+<body>
+    <h1>Project: {{ $project->title }}</h1>
+    <a href="/projects">All Projects</a>
     <p> {{ $project->description }} </p>
-
-</article>
+</body>
 
 </html>
