@@ -2,6 +2,9 @@
 ## What is this?
 This is for the [Build A Laravel App With TDD](https://laracasts.com/series/build-a-laravel-app-with-tdd) project, which I did a few years ago (2020).  I'm doing it again, using it as an opportunity to learn more about git (merging from other repos), and I will be using the testing skills to make tests for the [Laravel 8 From Scratch](https://laracasts.com/series/laravel-8-from-scratch) course.
 
+## Note: Skip The UI
+To anyone who does this course, most of the UI stuff is out of date, and most of the value is in the testing side.  So probably just do bare html (I've already set up laravel breeze so I'm using that, but it was more of a hassle than it was worth).
+
 ## Git Commit Style
 I will commit changes based on their features, then do an empty commit for each episode.  This allows clear distinctions for what episode changes are from, and allows reverting changes because sometimes multiple techniques for something are shown.
 
@@ -11,9 +14,12 @@ I will commit changes based on their features, then do an empty commit for each 
 - `_` for something that only makes sense because of my own changes/repo (except for DOC: commits it's assumed)
 - `^` if there was an issue related to the laravel/php version difference
 - `!` if the tests failed *(only started half way through Ep5)*
+- `RMVC` `ENH/BUG/MAINT:` The letter will be there if the routes (`web.php`), models, views (`*.blade.php`), and/or controllers are in the commit. *(started from Ep 10)*
 
 Using **commit prefixes** based on the [NumPy dev workflow commit messages](https://numpy.org/doc/1.14/dev/gitwash/development_workflow.html#writing-the-commit-message):
 (I will remove **#UNUSED** when they are used.)
+
+*(Note after doing 10 Eps or so, this doesn't work great since this is a MVC app, I added `RMVC` codes to help this)*
 ```
 API: an (incompatible) API change #UNUSED
 BENCH: changes to the benchmark suite #UNUSED
