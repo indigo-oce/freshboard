@@ -19,10 +19,10 @@
                 <p> {{ $task->body }} </p>
             </div>
         </div>
+        @endforeach
         <div class="mt-6 card">
             <textarea class="w-full py-2 rounded-lg border-2 border-gray-100 focus:border-indigo-300" style="min-height: 200px" placeholder="General Notes...">
         </textarea>
         </div>
-        @endforeach
     </div>
 </x-app-layout>
