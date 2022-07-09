@@ -94,6 +94,20 @@ class ManageProjectsTest extends TestCase
         $this->get($project->path())->assertStatus(403);
     }
 
+    public function test_a_user_cannot_update_the_projects_of_others()
+    {
+        $this->signIn();
+
+        $project = Project::factory()->create();
+
+        $this->patch($project->path(), $attributes = [
+            // 'title' => 'Changed Title',
+            // 'description' => 'Changed Description',
+            'notes' => 'Changed Notes'
+        ])->assertStatus(403);
+    }
+
+
     public function test_a_user_cannot_view_the_projects_of_others_on_projects_view()
     {
         $this->signIn();
