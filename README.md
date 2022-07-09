@@ -14,7 +14,7 @@ I will commit changes based on their features, then do an empty commit for each 
 - `_` for something that only makes sense because of my own changes/repo (except for DOC: commits it's assumed)
 - `^` if there was an issue related to the laravel/php version difference
 - `!` if the tests failed *(only started half way through Ep5)*
-- `RMVC` `ENH/BUG/MAINT:` The letter will be there if the routes (`web.php`), models, views (`*.blade.php`), and/or controllers are in the commit. *(started from Ep 10)*
+- `RMVCT` `ENH/BUG/MAINT:` The letter will be there if the routes (`web.php`), models, views (`*.blade.php`), controllers, and/or tests are in the commit. *(started from Ep 10)*
 
 Using **commit prefixes** based on the [NumPy dev workflow commit messages](https://numpy.org/doc/1.14/dev/gitwash/development_workflow.html#writing-the-commit-message):
 (I will remove **#UNUSED** when they are used.)
