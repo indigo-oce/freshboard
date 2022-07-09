@@ -67,7 +67,7 @@ class ProjectTasksTest extends TestCase
 
         $task = $project->addTask('First Task!');
 
-        $this->patch($project->path() . "/tasks/" . $task->id, [
+        $this->patch($task->path(), [
             'body' => 'Updated Task!',
             'completed' => true
         ]);

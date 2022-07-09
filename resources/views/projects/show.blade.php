@@ -14,7 +14,7 @@
 
     <div class="main">
         @foreach ($project->tasks as $task)
-        <form method="post" action="{{ $project->path() . '/tasks/' . $task->id }}">
+        <form method="post" action="{{ $task->path() }}">
             @method('PATCH')
             @csrf
 
