@@ -13,20 +13,16 @@
     </div>
 
     <div class="main">
+        @foreach ($project->tasks as $task)
         <div class="card">
             <div class="card-title">
-                <p> task 1 </p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-title">
-                <p> task 2 </p>
+                <p> {{ $task->body }} </p>
             </div>
         </div>
         <div class="mt-6 card">
             <textarea class="w-full py-2 rounded-lg border-2 border-gray-100 focus:border-indigo-300" style="min-height: 200px" placeholder="General Notes...">
         </textarea>
         </div>
+        @endforeach
     </div>
 </x-app-layout>
