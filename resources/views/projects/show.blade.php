@@ -1,16 +1,26 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Project:  {{ $project->title }}
+            Project: {{ $project->title }}
         </h2>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <p> {{ $project->description }} </p>
-                </div>
+    <div class="subheader">
+        <div class="main">
+            <p class="px-6 text-gray-600"> {{ $project->description }} </p>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="card">
+            <div class="card-title">
+                <p> task 1 </p>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-title">
+                <p> task 2 </p>
             </div>
         </div>
     </div>

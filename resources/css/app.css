@@ -1,3 +1,21 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.subheader {
+    @apply bg-white my-1 shadow
+}
+
+.main {
+    @apply max-w-7xl mx-auto sm:px-6 lg:px-8
+}
+
+.card {
+    @apply bg-white m-4 p-3 rounded shadow
+}
+
+.card-title {
+    @apply py-2 -ml-3 pl-4
+        border-l-4 border-x-indigo-600
+        font-semibold text-xl text-gray-800 align-middle
+}
