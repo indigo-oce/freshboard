@@ -19,6 +19,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('title');
             $table->text('description');
+            $table->text('notes')->nullable();
 
             // $table->foreign('owner_id')->references('id')->on('users')->onDelete('cascade');
         });

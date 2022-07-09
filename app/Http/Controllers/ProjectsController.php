@@ -32,6 +32,7 @@ class ProjectsController extends Controller
         $attributes = request()->validate([
             'title' => 'required',
             'description' => 'required',
+            'notes' => '',
         ]);
 
         // persist
