@@ -24,7 +24,7 @@
                 <p> {{ mb_strimwidth($project->description, 0, 250) }} </p>
             </div>
             @empty
-            <div>
+            <div class="py-4 text-gray-600">
                 <p>No Projects Yet...</p>
             </div>
             @endforelse
