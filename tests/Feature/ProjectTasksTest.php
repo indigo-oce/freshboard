@@ -57,6 +57,27 @@ class ProjectTasksTest extends TestCase
             ->assertSee('First Task!');
     }
 
+    public function test_a_user_can_update_their_task()
+    {
+        $this->signIn();
+
+        $project = Project::factory()->create([
+            'owner_id' => auth()->user()->id
+        ]);
+
+        $task = $project->addTask('First Task!');
+
+        $this->patch($project->path() . "/tasks/" . $task->id, [
+            'body' => 'Updated Task!',
+            'completed' => true
+        ]);
+
+        $this->assertDatabaseHas('tasks', [
+            'body' => 'Updated Task!',
+            'completed' => true
+        ]);
+    }
+
     public function test_tasks_require_a_body()
     {
         $this->signIn();

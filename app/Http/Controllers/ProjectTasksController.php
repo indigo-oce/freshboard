@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Task;
 use App\Models\Project;
 use Illuminate\Http\Request;
 
@@ -18,6 +19,16 @@ class ProjectTasksController extends Controller
         // persist
         $project->addTask(request('body'));
         // redirect
+        return redirect($project->path());
+    }
+
+    public function update(Project $project, Task $task)
+    {
+        $task->update([
+            'body' => request('body'),
+            'completed' => request()->has('completed'),
+        ]);
+
         return redirect($project->path());
     }
 }
