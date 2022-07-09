@@ -53,8 +53,8 @@ class ManageProjectsTest extends TestCase
         ]);
 
         $this->get($project->path())
-        ->assertSee($project->title)
-        ->assertSee($project->description);
+            ->assertSee($project->title)
+            ->assertSee($project->description);
     }
 
     public function test_a_user_cannot_view_the_projects_of_others()
