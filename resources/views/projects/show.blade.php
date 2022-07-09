@@ -20,7 +20,7 @@
 
             <div class="card flex items-center">
                 <input name="completed" type="checkbox" class="mr-2" onChange="this.form.submit()" {{$task->completed ? 'checked' : ''}}>
-                <input name="body" value="{{$task->body}}" class="w-full w-full py-2 rounded-lg border-2 border-gray-100 focus:border-indigo-300">
+                <input name="body" value="{{$task->body}}" class="w-full w-full py-2 rounded-lg border-2 border-gray-100 focus:border-indigo-300 {{$task->completed ? 'text-gray-400' : ''}}">
             </div>
         </form>
         @endforeach
