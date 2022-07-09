@@ -18,6 +18,6 @@ class ProjectTasksController extends Controller
         // persist
         $project->addTask(request('body'));
         // redirect
-        return redirect('/projects');
+        return redirect($project->path());
     }
 }

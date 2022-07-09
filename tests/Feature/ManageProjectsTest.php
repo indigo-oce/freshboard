@@ -35,7 +35,9 @@ class ManageProjectsTest extends TestCase
             'description' => $this->faker->paragraph,
         ];
 
-        $this->post('/projects', $attributes)->assertRedirect('/projects');
+        $this->post('/projects', $attributes)->assertRedirect(
+            auth()->user()->projects()->find(1)->path()
+        );
 
         $this->assertDatabaseHas('projects', $attributes);
 
