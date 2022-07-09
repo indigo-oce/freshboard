@@ -1,7 +1,8 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            Project: {{ $project->title }}
+            <x-nav-link class="font-semibold text-xl text-gray-700 leading-tight" href="/projects"> Projects
+            </x-nav-link> / {{ $project->title }}
         </h2>
     </x-slot>
 
