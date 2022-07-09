@@ -30,9 +30,13 @@
                 <input name="body" placeholder="add a task, then hit return" class="w-full py-2 rounded-lg border-2 border-gray-100 focus:border-indigo-300">
             </form>
         </div>
-        <div class="mt-6 card">
-            <textarea class="w-full py-2 rounded-lg border-2 border-gray-100 focus:border-indigo-300" style="min-height: 200px" placeholder="General Notes...">
-        </textarea>
-        </div>
+        <form method="post" action="{{$project->path()}}">
+            @csrf
+            @method('PATCH')
+            <div class="mt-6 card">
+                <textarea name="notes" class="w-full py-2 rounded-lg border-2 border-gray-100 focus:border-indigo-300" style="min-height: 200px" placeholder="General Notes..." value="">{{ $project->notes }}</textarea>
+            <x-button class="mt-2">Save</x-button>
+            </div>
+        </form>
     </div>
 </x-app-layout>
