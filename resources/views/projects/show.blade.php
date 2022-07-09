@@ -20,6 +20,12 @@
             </div>
         </div>
         @endforeach
+        <div class="card">
+            <form action="{{ $project->path() . '/tasks' }}" method="post">
+                @csrf
+                <input name="body" placeholder="add a task, then hit return" class="w-full py-2 rounded-lg border-2 border-gray-100 focus:border-indigo-300">
+            </form>
+        </div>
         <div class="mt-6 card">
             <textarea class="w-full py-2 rounded-lg border-2 border-gray-100 focus:border-indigo-300" style="min-height: 200px" placeholder="General Notes...">
         </textarea>
