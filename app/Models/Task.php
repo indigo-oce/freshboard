@@ -14,7 +14,7 @@ class Task extends Model
     protected $touches = ['project'];
 
       public function path() {
-        return "/projects/{$this->project->id}/tasks/{$this->id}";
+        return "/tasks/{$this->id}";
       }
 
     public function project()
