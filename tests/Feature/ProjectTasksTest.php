@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Tests\TestCase;
+use App\Models\Task;
 use App\Models\Project;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -27,5 +28,19 @@ class ProjectTasksTest extends TestCase
 
         $this->get($project->path())
             ->assertSee('First Task!');
+    }
+
+    public function test_tasks_require_a_body()
+    {
+        $this->signIn();
+
+        $project = Project::factory()->create([
+            'owner_id' => auth()->user()->id
+        ]);
+
+        $attributes = Task::factory()->raw(['body' => '']);
+
+        $this->post($project->path() . '/tasks', $attributes)
+            ->assertSessionHasErrors('body');
     }
 }
