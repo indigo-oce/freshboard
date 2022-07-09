@@ -33,15 +33,18 @@ class ManageProjectsTest extends TestCase
         $attributes = [
             'title' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
+            'notes' => 'General notes here...'
         ];
 
-        $this->post('/projects', $attributes)->assertRedirect(
-            Project::where($attributes)->first()->path()
-        );
+        $response = $this->post('/projects', $attributes);
+
+        $project = Project::where($attributes)->first();
+
+        $response->assertRedirect($project->path());
 
         $this->assertDatabaseHas('projects', $attributes);
 
-        $this->get('/projects')->assertSee($attributes['title']);
+        $this->get($project->path())->assertSee($attributes['title']);
     }
 
     public function test_a_user_can_view_their_project()
