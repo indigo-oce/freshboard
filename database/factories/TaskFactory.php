@@ -19,7 +19,7 @@ class TaskFactory extends Factory
     {
         return [
             'body' => fake()->sentence(),
-            'project_id' => Project::factory()->create()->id,
+            'project_id' => Project::factory()->create(),
         ];
     }
 }

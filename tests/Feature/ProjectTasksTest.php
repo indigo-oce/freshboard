@@ -27,9 +27,7 @@ class ProjectTasksTest extends TestCase
     {
         $this->signIn();
 
-        $project = Project::factory()->create([
-            'owner_id' => User::factory()->create()
-        ]);
+        $project = Project::factory()->create();
 
         $attributes = Task::factory()->raw();
 
@@ -45,9 +43,7 @@ class ProjectTasksTest extends TestCase
 
         $this->signIn();
 
-        $project = Project::factory()->create([
-            'owner_id' => auth()->user()->id
-        ]);
+        $project = Project::factory()->createOwnedBy(auth()->user());
 
         $this->post($project->path() . '/tasks', [
             'body' => 'First Task!'
@@ -61,9 +57,7 @@ class ProjectTasksTest extends TestCase
     {
         $this->signIn();
 
-        $project = Project::factory()->create([
-            'owner_id' => auth()->user()->id
-        ]);
+        $project = Project::factory()->createOwnedBy(auth()->user());
 
         $task = $project->addTask('First Task!');
 
@@ -82,9 +76,7 @@ class ProjectTasksTest extends TestCase
     {
         $this->signIn();
 
-        $project = Project::factory()->create([
-            'owner_id' => auth()->user()->id
-        ]);
+        $project = Project::factory()->createOwnedBy(auth()->user());
 
         $attributes = Task::factory()->raw(['body' => '']);
 

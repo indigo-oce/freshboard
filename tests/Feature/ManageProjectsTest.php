@@ -53,9 +53,7 @@ class ManageProjectsTest extends TestCase
 
         $this->signIn();
 
-        $project = Project::factory()->create([
-            'owner_id' => auth()->user()->id
-        ]);
+        $project = Project::factory()->createOwnedBy(auth()->user());
 
         $this->patch($project->path(), $attributes = [
             // 'title' => 'Changed Title',
@@ -74,9 +72,7 @@ class ManageProjectsTest extends TestCase
 
         $this->signIn();
 
-        $project = Project::factory()->create([
-            'owner_id' => auth()->user()->id
-        ]);
+        $project = Project::factory()->createOwnedBy(auth()->user());
 
         $this->get($project->path())
             ->assertSee($project->title)
