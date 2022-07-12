@@ -16,6 +16,8 @@ I will commit changes based on their features, then do an empty commit for each 
 - `!` if the tests failed *(only started half way through Ep5)*
 - `RMVCT` `ENH/BUG/MAINT:` The letter will be there if the routes (`web.php`), models, views (`*.blade.php`), controllers, and/or tests are in the commit. *(started from Ep 10)*
 
+**I will be rebasing when I want, regardless of whether the repo is public.**  A nicer commit history makes sense for this kind of project.
+
 Using **commit prefixes** based on the [NumPy dev workflow commit messages](https://numpy.org/doc/1.14/dev/gitwash/development_workflow.html#writing-the-commit-message):
 (I will remove **#UNUSED** when they are used.)
 
